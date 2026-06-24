@@ -1,0 +1,108 @@
+---
+
+---
+
+<header class="text-color font-body">
+  <div class="mx-auto flex flex-wrap p-2 respt-h flex-row items-center">
+    <a class="flex title-font font-medium items-center text-gray-900 mb-0">
+      <img src="/icon.jpg.heic" class="w-8 h-8" />
+      <a class="ml-3 text-xl text-color font-bold" href="/">東京大学スタタリング</a>
+    </a>
+
+    <script>
+      const burger = document.querySelector("#burger");
+      const close = document.querySelector("#close");
+      const menu = document.querySelector("#menu");
+
+      if (burger) {
+        burger.addEventListener("click", () => {
+          burger?.classList.toggle("is-active");
+          close?.classList.toggle("is-active");
+          menu?.classList.toggle("is-active");
+        });
+      }
+
+      if (close) {
+        close.addEventListener("click", () => {
+          burger?.classList.remove("is-active");
+          close?.classList.remove("is-active");
+          menu?.classList.remove("is-active");
+        });
+      }
+    </script>
+
+    <nav class="ml-auto flex flex-wrap items-center text-base justify-center">
+      <div class="menu_header">
+        <a
+          class="mr-5 hover-color font-medium"
+          style="padding-right: 5px; padding-left: 5px;"
+          href="/">ホーム</a
+        >
+        <a
+          class="mr-5 hover-color font-medium"
+          style="padding-right: 5px; padding-left: 5px;"
+          href="/news/">お知らせ</a
+        >
+        <a
+          class="mr-5 hover-color font-medium"
+          style="padding-right: 5px; padding-left: 5px;"
+          href="/about/">団体について</a
+        >
+        <a
+          class="mr-5 hover-color font-medium"
+          style="padding-right: 5px; padding-left: 5px;"
+          href="/activities/">活動紹介</a
+        >
+        <a
+          class="mr-5 hover-color font-medium"
+          style="padding-right: 5px; padding-left: 5px;"
+          href="/achievements/">活動実績</a
+        >
+        <a
+          class="mr-5 hover-color font-medium"
+          style="padding-right: 5px; padding-left: 5px;"
+          href="/posts/1">ブログ</a
+        >
+        
+        <a
+          class="mr-5 hover-color font-medium"
+          style="padding-right: 5px; padding-left: 5px;"
+          href="/contact/">お問い合わせ</a
+        >
+        
+      </div>
+      <button
+        type="button"
+        id="theme-btn"
+        class=""
+        style="margin: 0px;"
+        title="Toggles light & dark"
+        aria-label="auto"
+        aria-live="polite"
+      >
+        <div style="font-size: 24px;">
+          <i id="moon-icon" class="ri-moon-line"></i>
+          <i id="sun-icon" class="ri-sun-line"></i>
+        </div>
+      </button>
+      <div class="del" style="width: 20px;"></div>
+      <button class="del ml-auto">
+        <div style="width: 20px;"></div>
+        <div style="font-size: 24px;">
+          <i class="ri-menu-3-line burger" id="burger"></i>
+          <i class="ri-close-large-line close" id="close"></i>
+        </div>
+      </button>
+    </nav>
+  </div>
+  <nav class="menu" id="menu">
+    <a class="m-4 hover-color font-medium text-base" href="/">ホーム</a>
+    <a class="m-4 hover-color font-medium text-base" href="/news/">お知らせ</a>
+    <a class="m-4 hover-color font-medium text-base" href="/about/">団体について</a>
+    <a class="m-4 hover-color font-medium text-base" href="/activities/">活動紹介</a>
+    <a class="m-4 hover-color font-medium text-base" href="/achievements/">活動実績</a>
+    <a class="m-4 hover-color font-medium text-base" href="/posts/1">ブログ</a>
+    <a class="m-4 hover-color font-medium text-base" href="/contact/">お問い合わせ</a>
+    <div style="height: 16px;"></div>
+  </nav>
+</header>
