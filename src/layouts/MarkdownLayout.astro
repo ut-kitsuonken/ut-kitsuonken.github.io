@@ -1,0 +1,90 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title=`${frontmatter.title}・東京大学スタタリング`>
+  <div class="text-color blog-width">
+    <div style="height: 9px;"></div>
+    <div class="flex">
+      <a
+        href="#"
+        onclick="history.back(); return false;"
+        class="font-body font-medium hover-color"
+        style="margin-left: 10px; margin-right: 10px; display: flex; align-items: center;"
+        ><i class="ri-arrow-left-line" style="font-size: 24px;"></i>&nbsp;Go
+        back</a
+      >
+    </div>
+    <div style="height: 20px;"></div>
+    <div class="text-font text-xl margin-post">
+      <span class="font-medium">
+        {frontmatter.title}
+      </span>
+      <div style="height: 5px;"></div>
+      <span>
+        {
+          frontmatter.update ? (
+            <div class="update-content">
+              <i class="ri-calendar-2-line" />
+              <a class="text-base italic">{frontmatter.date}</a>
+              &nbsp;
+              <i class="ri-loop-left-line" />
+              <a class="text-base italic">{frontmatter.update}</a>
+              <div style="height: 5px;" />
+              {frontmatter.tags && frontmatter.tags.length > 0 && (
+                <>
+                  {frontmatter.tags.map((tag: any) => (
+                    <a
+                      href={`/tags/${tag}`}
+                      class="text-base hover-color"
+                      style="padding-right: 3px;"
+                    >
+                      ＃{tag}
+                    </a>
+                  ))}
+                </>
+              )}
+            </div>
+          ) : (
+            <div class="no-update-content">
+              <i class="ri-calendar-2-line" />
+              <a class="text-base italic">{frontmatter.date}</a>
+              <div style="height: 5px;" />
+              {frontmatter.tags && frontmatter.tags.length > 0 && (
+                <>
+                  {frontmatter.tags.map((tag: any) => (
+                    <a
+                      href={`/tags/${tag}`}
+                      class="text-base hover-color"
+                      style="padding-right: 3px;"
+                    >
+                      ＃{tag}
+                    </a>
+                  ))}
+                </>
+              )}
+            </div>
+          )
+        }
+      </span>
+      <div style="height: 24px;"></div>
+      <div
+        class="text-base link blog-width"
+        style="letter-spacing: .025em; font-size: 1.05rem; margin-bottom: 50px; line-height: 2.05;"
+      >
+        <slot />
+      </div>
+      <div class="flex items-center justify-center">
+        <a
+          href="#page-top"
+          class="flex items-center justify-center font-body font-medium page-top hover-color"
+          style="margin-bottom: 80px; font-size: 16px;"
+          ><i class="ri-arrow-turn-forward-line" style="font-size: 20px;"
+          ></i>&nbsp;&nbsp;Back to top</a
+        >
+      </div>
+    </div>
+  </div>
+</Layout>
